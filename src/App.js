@@ -1,14 +1,17 @@
 import React from 'react';
 import MainLayout from './MainLayout';
+import MainNavigation from './MainNavigation';
+import Cards from './Cards/Cards';
 import './App.css';
 
 function App() {
   return (
-    <div>
+    <>
+      <MainNavigation />
       <MainLayout>
-        <div>My sample data</div>
+        <Cards />
       </MainLayout>
-    </div>
+    </>
   );
 }
 

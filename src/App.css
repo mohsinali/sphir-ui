@@ -1,5 +1,8 @@
+body {
+  background-color: #282c34;
+}
+
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -25,8 +28,8 @@
 }
 
 .App-body {
-  background-color: #282c34;
-  color: white;
+  background-color: white;
+  width: 800px;
 }
 
 .App-link {
