@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import {iconShare} from '../icons/*';
+import {iconShare, iconComment, iconDotsV} from '../icons/Icons';
 import './Cards.css';
+
+// const logo = require('../icons/share.svg');
 
 class Cards extends Component {
   render(){
@@ -18,7 +20,9 @@ class Cards extends Component {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
           <Card.Footer className="text-muted">
-            <img src={iconShare} width="30"/>
+            <img alt="Dots" src={iconDotsV} className="icon" />
+            <img alt="Share" src={iconShare} className="icon" />
+            <img alt="Comment" src={iconComment} className="icon" />
           </Card.Footer>
         </Card>
 
