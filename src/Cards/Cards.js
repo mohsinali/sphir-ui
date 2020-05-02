@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import {iconShare} from '../icons/*';
 import './Cards.css';
 
 class Cards extends Component {
@@ -19,7 +18,7 @@ class Cards extends Component {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
           <Card.Footer className="text-muted">
-            <FontAwesomeIcon icon={faEllipsisV} />
+            <img src={iconShare} width="30"/>
           </Card.Footer>
         </Card>
 
@@ -34,7 +33,6 @@ class Cards extends Component {
             <Button variant="primary">Go somewhere</Button>
           </Card.Body>
           <Card.Footer className="text-muted">
-            <FontAwesomeIcon icon={faEllipsisV} />
           </Card.Footer>
         </Card>
 
