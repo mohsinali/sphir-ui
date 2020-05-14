@@ -1,3 +1,9 @@
 export const iconShare    = require('./share.svg');
 export const iconComment  = require('./comment.svg');
 export const iconDotsV    = require('./dotsV.svg');
+export const iconEnvelope = require('./envelope.svg');
+export const iconInternet = require('./internet.svg');
+export const iconLink = require('./link.svg');
+export const iconFacebook = require('./facebook.svg');
+export const iconTwitter  = require('./twitter.svg');
+export const iconLinkedin = require('./linkedin.svg');

@@ -36,8 +36,18 @@ body {
   color: #61dafb;
 }
 
-.icon {
+img.icon {
   width: 20px;
+}
+
+/* ***************** Margind and Paddings ***************** */
+.margin-right-3 {
+  margin-right: 3px;;
+}
+/* *************************************************** */
+
+.share-modal {
+  padding: 0px;
 }
 
 @keyframes App-logo-spin {
