@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Card, Button, Dropdown, ListGroup } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import {iconShare, iconComment, iconDotsV, iconEnvelope, iconInternet, iconLink, iconFacebook, iconTwitter, iconLinkedin} from '../icons/Icons';
 
 const dotsMenu = React.forwardRef(({ children, onClick }, ref) => (
@@ -28,7 +29,6 @@ const renderThreeDotsMenu = () => {
 }
 
 
-
 const CardItemLarge  = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -37,7 +37,7 @@ const CardItemLarge  = (props) => {
   return(
     <>
       <Card className="card-item-large">
-        {/* <Card.Img variant="top" src="https://picsum.photos/350/250?random=1" /> */}
+        <Card.Img variant="top" src="https://picsum.photos/350/250?random=1" />
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>
@@ -62,30 +62,34 @@ const CardItemLarge  = (props) => {
         <Modal.Body className="share-modal">
         
         <ListGroup>
-          <ListGroup.Item>
+          <ListGroup.Item action>
             <img alt="Message a Friend in Sphir" src={iconEnvelope} className="icon margin-right-3" /> 
              Message a Friend in Sphir
           </ListGroup.Item>
-          <ListGroup.Item>
+          <ListGroup.Item action>
             <img alt="Message a Friend in Sphir" src={iconInternet} className="icon margin-right-3" />
             Email Link
           </ListGroup.Item>
-          <ListGroup.Item>
+          
+          <ListGroup.Item action>
             <img alt="Message a Friend in Sphir" src={iconLink} className="icon margin-right-3" />
-            Copy Link
+            <CopyToClipboard text={window.location.href}>
+              <span>Copy Link</span>
+            </CopyToClipboard>
+        
           </ListGroup.Item>
           
-          <ListGroup.Item>
+          <ListGroup.Item action>
             <img alt="Message a Friend in Sphir" src={iconFacebook} className="icon margin-right-3" />
             Post on Facebook
           </ListGroup.Item>
           
-          <ListGroup.Item>
+          <ListGroup.Item action>
             <img alt="Message a Friend in Sphir" src={iconTwitter} className="icon margin-right-3" />
             Post on Twitter
           </ListGroup.Item>
 
-          <ListGroup.Item>
+          <ListGroup.Item action>
             <img alt="Message a Friend in Sphir" src={iconLinkedin} className="icon margin-right-3" />
             Post on LinkedIn
           </ListGroup.Item>
