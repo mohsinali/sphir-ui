@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Card, Button, Dropdown, ListGroup } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {iconShare, iconComment, iconDotsV, iconEnvelope, iconInternet, iconLink, iconFacebook, iconTwitter, iconLinkedin} from '../icons/Icons';
+import {
+        iconShare, iconComment, iconDotsV, iconEnvelope, iconInternet, 
+        iconLink, iconFacebook, iconTwitter, iconLinkedin
+      } from '../icons/Icons';
 
 const dotsMenu = React.forwardRef(({ children, onClick }, ref) => (
   <a href="" ref={ref}
@@ -37,7 +40,7 @@ const CardItemLarge  = (props) => {
   return(
     <>
       <Card className="card-item-large">
-        <Card.Img variant="top" src="https://picsum.photos/350/250?random=1" />
+        {/* <Card.Img variant="top" src="https://picsum.photos/350/250?random=1" /> */}
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>

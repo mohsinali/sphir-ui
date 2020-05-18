@@ -7,3 +7,4 @@ export const iconLink = require('./link.svg');
 export const iconFacebook = require('./facebook.svg');
 export const iconTwitter  = require('./twitter.svg');
 export const iconLinkedin = require('./linkedin.svg');
+export const iconPlus     = require('./plus.svg');
