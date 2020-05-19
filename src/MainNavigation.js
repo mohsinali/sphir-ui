@@ -20,7 +20,7 @@ const MainNavigation = () => {
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
         </Form>
-        <CreateCard openSelectCardTyp={createCard} />
+        <CreateCard openSelectCardType={createCard} />
       </Navbar.Collapse>
     </Navbar>
   );

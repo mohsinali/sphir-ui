@@ -1,18 +1,19 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
+import SelectCardTypeModal from './SelectCardTypeModal'
 
 const CreateCard = (props) => {
-  const [showSelectCardTypeModal, setShowSelectCardTypeModal] = useState(false);
-  const handleSelectCardTypeShow  = () => setShowSelectCardTypeModal(true);
-  const handleSelectCardTypeClose = () => setShowSelectCardTypeModal(false);
+  const cal = useRef()
   
   useEffect(() => {
-    if(props.openSelectCardTyp){
-      console.log('Open Modal');
+    console.log(props);
+    if(props.openSelectCardType){
+      cal.current.handleShow();
     }
   });
   
   return(
     <>
+      <SelectCardTypeModal ref={cal} />
     </>
   );
 }
