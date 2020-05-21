@@ -1,21 +1,16 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useRef} from 'react';
 import SelectCardTypeModal from './SelectCardTypeModal'
 
-const CreateCard = (props) => {
-  const cal = useRef()
-  
-  useEffect(() => {
-    console.log(props);
-    if(props.openSelectCardType){
-      cal.current.handleShow();
-    }
-  });
+const CreateCard = React.forwardRef((props, ref) => {
+  const selectCardType = useRef()
+  const openCardTypeModal = () => selectCardType.current.handleShow();
+  ref.current = { openCardTypeModal };
   
   return(
     <>
-      <SelectCardTypeModal ref={cal} />
+      <SelectCardTypeModal ref={selectCardType} />
     </>
   );
-}
+});
 
 export default CreateCard;

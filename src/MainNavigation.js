@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import CreateCard from './Cards/CreateCard';
 
 const MainNavigation = () => {
-  const [createCard, setCreateCard] = useState(false);
-  const handleCreateCardClick = () => setCreateCard(true);
+  const createCard = useRef();
+  const handleCreateCardClick = () => createCard.current.openCardTypeModal();
 
   return (
     <Navbar bg="light" expand="lg">
@@ -20,7 +20,7 @@ const MainNavigation = () => {
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
         </Form>
-        <CreateCard openSelectCardType={createCard} />
+        <CreateCard ref={createCard} />
       </Navbar.Collapse>
     </Navbar>
   );

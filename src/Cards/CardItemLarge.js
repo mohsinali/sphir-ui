@@ -40,7 +40,7 @@ const CardItemLarge  = (props) => {
   return(
     <>
       <Card className="card-item-large">
-        <Card.Img variant="top" src="https://picsum.photos/350/250?random=1" />
+        {/* <Card.Img variant="top" src="https://picsum.photos/350/250?random=1" /> */}
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
           <Card.Text>
