@@ -2,3 +2,11 @@
   width: '48rem';
   margin-bottom: 10px;
 }
+
+.btn-card-type {
+  width: 170px;
+}
+
+.ctn-card-types .row {
+  margin-bottom: 10px;
+}
