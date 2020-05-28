@@ -7,18 +7,18 @@ const CreateCard = React.forwardRef((props, ref) => {
   const searchCardTitle         = useRef();
   const [cardType, setCardType] = useState('');
   const openCardTypeModal       = () => selectCardType.current.handleShow();
+  const onSetCardType           = (cardType) => {
+                                    setCardType(cardType);
+                                    searchCardTitle.current.handleShow(cardType);
+                                  };
 
-  useEffect( () => {
-    if(cardType !== ''){
-      searchCardTitle.current.handleShow();
-    }
-  });
+  useEffect( () => {});
 
   ref.current = { openCardTypeModal };
   
   return(
     <>
-      <SelectCardTypeModal ref={selectCardType} onSelectCardType={(cardType) => setCardType(cardType)} />
+      <SelectCardTypeModal ref={selectCardType} onSelectCardType={(cardType) => onSetCardType(cardType)} />
       <SearchCardTitle ref={searchCardTitle} />
     </>
   );
