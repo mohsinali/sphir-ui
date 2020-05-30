@@ -1,31 +1,32 @@
-import React, {useState} from 'react';
+import React, {useState, Component} from 'react';
 import { Button, Modal, Container, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
-const SearchCardTitleModal = React.forwardRef((props, ref) => {
-  const [show, setShow] = useState(false);
-  const [cardType, setCardType] = useState('');
-
-  const handleClose = () => setShow(false);
-  const handleShow = (cardType) => {
-                      setShow(true);
-                      setCardType(cardType);
-                    }
+class SearchCardTitleModal extends Component {
+  state = {
+    show: false,
+    cardType: ''
+  }
   
-  ref.current = { handleShow }
-
-  return (
-    <>
-      <Modal dialogClassName="modal-50w" centered="true" show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>{cardType}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Fields
-        </Modal.Body>
-        
-      </Modal>
-    </>
-  );
-});
+  handleClose = () => this.setState({show: false});
+  handleShow = (cardType) => {
+                      this.setState({show: true, cardType: cardType});
+                    }
+  render(){
+    return (
+      <>
+        <Modal dialogClassName="modal-50w" centered="true" show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>{this.state.cardType}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Fields
+          </Modal.Body>
+          
+        </Modal>
+      </>
+    );
+  }
+};
 
 export default SearchCardTitleModal;

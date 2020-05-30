@@ -1,24 +1,25 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import { Button, Modal, Container, Row, Col } from 'react-bootstrap';
 
-const SelectCardTypeModal = React.forwardRef((props, ref) => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const handleSelectCardType = (cardType) => {
-    props.onSelectCardType(cardType);
-    handleClose();
+class SelectCardTypeModal extends Component {
+  state = {
+    show: false
+  }
+
+  handleClose = () => this.setState({show: false});
+  handleShow = () => this.setState({show: true});
+  handleSelectCardType(cardType){
+    this.props.onSelectCardType(cardType);
+    this.handleClose();
   }
   
-  ref.current = { handleShow }
-
-  const renderButtons = () => {
+  renderButtons(){
     return (
       <Container className="ctn-card-types">
         <Row>
           <Col className="d-flex justify-content-between">
-            <Button className="btn-sphir btn-card-type" variant="outline-secondary" size="lg" onClick={() => handleSelectCardType('Article')}>Article</Button>
-            <Button className="btn-sphir btn-card-type" variant="outline-secondary" size="lg" onClick={() => handleSelectCardType('Video')}>Video</Button>
+            <Button className="btn-sphir btn-card-type" variant="outline-secondary" size="lg" onClick={() => this.handleSelectCardType('Article')}>Article</Button>
+            <Button className="btn-sphir btn-card-type" variant="outline-secondary" size="lg" onClick={() => this.handleSelectCardType('Video')}>Video</Button>
             <Button className="btn-sphir btn-card-type" variant="outline-secondary" size="lg">Original Scribe</Button>
             <Button className="btn-sphir btn-card-type" variant="outline-secondary" size="lg">Product</Button>
           </Col>
@@ -60,21 +61,22 @@ const SelectCardTypeModal = React.forwardRef((props, ref) => {
     );
   }
   
-
-  return (
-    <>
-      <Modal dialogClassName="modal-50w" centered="true" show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Select Card Type</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {renderButtons()}
-
-        </Modal.Body>
-        
-      </Modal>
-    </>
-  );
-});
+  render(){
+    return (
+      <>
+        <Modal dialogClassName="modal-50w" centered="true" show={this.state.show} onHide={this.handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Select Card Type</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {this.renderButtons()}
+  
+          </Modal.Body>
+          
+        </Modal>
+      </>
+    );
+  }
+};
 
 export default SelectCardTypeModal;
